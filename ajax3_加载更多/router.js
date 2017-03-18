@@ -4,7 +4,7 @@ app.get("/loadMore",function(req,res){
 	var dates=[];
 	
 	for (var i=0;i<len;i++) {
-		dates.push("新闻"+(parseInt(count)+i));
+		dates.push("内容"+(parseInt(count)+i));
 	}
 	setTimeout(function(){
 		res.send(dates)

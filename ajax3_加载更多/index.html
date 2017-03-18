@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			div{
+				text-align: center;
+			}
+			ul,li{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+				margin: 10px 0;
+				padding: 10px 5px;
+				border: 1px solid;
+			}
+			#btn{
+				padding: 6px 10px;
+				margin-top: 20px;
+			}
+			#btn:hover{
+				background: darkcyan;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<ul class="lists">
+			</ul>
+			<button id="btn" href="javascript:void(0);">加载更多</button>
+		</div>
+		<script>
+			var Olists=document.querySelector(".lists");
+			var Obtn=document.querySelector("#btn");
+			var pageindex=0;
+			var dateArrive=true;
+			
+			
+			function loadDate(render){
+				var obj={
+					type:"get",
+					url:'/loadMore?',
+					dates:{
+						count:pageindex,
+						length:5
+					},
+					onSuss:render,
+					onErr:function(){
+						console.log("错误");
+					}
+				}
+				ajax(obj)
+			}
+			
+			//数据加载的时候按钮的状态
+			function refuse(){
+				Obtn.innerText="正在加载...";
+				Obtn.addEventListener("mouseenter",function(){
+					Obtn.style.background="#ccc";
+				})
+				//Obtn.disabled=true;
+			}
+			//数据加载成功
+			function loaded(){
+				//dateSend=false;
+				Obtn.innerText="加载更多";
+				//Obtn.disabled=false;
+				Obtn.addEventListener("mouseenter",function(){
+					Obtn.style.background="darkcyan";
+				})
+				Obtn.addEventListener("mouseleave",function(){
+					Obtn.style.background="#ccc";
+				})
+			}
+			//数据汇总成html片段返回给页面
+			function render(arry){
+				var fragment=document.createDocumentFragment();
+				for (var i=0;i<arry.length;i++) {
+					var nod=document.createElement("li");
+					nod.innerText=arry[i];
+					fragment.appendChild(nod);
+					Olists.appendChild(fragment);
+				}
+			}
+			
+			//ajax请求响应数据
+			function ajax(obj){
+				var xhr=new XMLHttpRequest();
+				var str=obj.url;
+				for (key in obj.dates) {
+					str+=key+'='+obj.dates[key]+'&';
+				}
+				str=str.substr(0,str.length-1);
+				xhr.open(obj.type,str,true);
+				xhr.send();
+				refuse();
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState===4){
+						if(xhr.status===200||xhr.status===304){
+						var result=JSON.parse(xhr.responseText);
+						console.log(result);
+						obj.onSuss(result);
+					}else{
+					   obj.onErr;
+					   dateSend=false;
+					}
+					loaded()
+					}
+				  
+				}
+			}
+			
+			
+			
+			//监听按钮单击状态
+			Obtn.addEventListener("click",function(){
+				
+				if(!dateArrive){
+					return;
+				}
+				//调用ajax函数
+				loadDate(function(news){
+				render(news);
+				pageindex=pageindex+5;
+				//还原状态，不锁定
+				dateArrive=true;
+				});
+				//锁定状态
+				dateArrive=false;
+			})
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

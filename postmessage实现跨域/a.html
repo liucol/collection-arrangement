@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.ct{
+				margin: 50px 0;
+			}
+			.one{
+				padding: 20px 20px;
+				float: left;
+				width: 600px;
+				height: 400px;
+				border: 1px solid;
+			}
+			iframe{
+				float: left;
+				width: 600px;
+				height: 440px;
+				border: 1px dotted;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ct">
+			<h1>PostMessage实现跨域</h1>
+			<div class="one">
+				<input type="text" placeholder="http://a.jrg.com:8080/a.html" />
+			</div>
+			<iframe src="http://b.jrg.com:8080/b.html" frameborder="0"></iframe>
+		</div>
+		<script>
+			$(".one input").addEventListener("input",function(){
+				//window.frames[0]:指的是嵌入的窗口
+				window.frames[0].postMessage(this.value,"*")
+			})
+			window.addEventListener("message",function(e){
+				console.log(e.data)
+				$(".one input").value=e.data
+			})
+			function $(str){
+				return document.querySelector(str)
+			}
+		</script>
+	</body>
+</html>

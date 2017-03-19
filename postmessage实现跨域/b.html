@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" placeholder="http://b.jrg.com:8080/b.html" />
+		<script>
+			$("input").addEventListener("input",function(){
+				window.parent.postMessage(this.value,"*")
+			})
+			//监听整个window里面发出的message,获取这个message里面的数据date
+			window.addEventListener("message",function(e){
+				console.log(e.data)
+				$("input").value=e.data;
+			})
+			function $(str){
+				return document.querySelector(str)
+			}
+		</script>
+	</body>
+</html>

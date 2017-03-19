@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.ct{
+				margin: 50px 0;
+			}
+			.one{
+				padding: 20px 20px;
+				float: left;
+				width: 600px;
+				height: 400px;
+				border: 1px solid;
+			}
+			iframe{
+				float: left;
+				width: 600px;
+				height: 440px;
+				border: 1px dotted;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ct">
+			<h1>降域</h1>
+			<div class="one">
+				<input type="text" placeholder="http://a.jrg.com:8080/a.html" />
+			</div>
+			<iframe src="http://b.jrg.com:8080/b.html" frameborder="0"></iframe>
+		</div>
+		<script>
+			document.querySelector(".one input").addEventListener("input",function(){
+				console.log(this.value)
+				window.frames[0].document.querySelector("input").value=this.value
+			})
+			//URL:http://a.jrg.com:8080/a.html
+			//降域
+			//a.jrg.com
+			//jrg.com
+			//b.jrg.com
+			//上面三个域名同源，前后两个域名降到jrg.com,就可以相互之间数据通信
+			document.domain="jrg.com"
+		</script>
+	</body>
+</html>

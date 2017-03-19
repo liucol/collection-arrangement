@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<ul class="lists"></ul>
+		<button id="button">换一组</button>
+		<script>
+			function $(str){
+				return document.querySelector(str)
+			}
+			
+			$("#button").addEventListener("click",function(){
+				var xhr=new XMLHttpRequest()
+				xhr.open("get","http://b.jrg.com:8080/getNews",true)
+				xhr.send()
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState===4){
+						if(xhr.status===200||xhr.status===304){
+							var newsDate=JSON.parse(xhr.responseText)
+							addHtml(newsDate);
+						}else{
+							console.log("出现错误")
+						}
+					}
+				}
+			})
+			function addHtml(obj){
+				var html="";
+				for(var i=0;i<obj.length;i++){
+					html+="<li>"+obj[i]+"</li>"
+				}
+				$(".lists").innerHTML=html;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<ul class="lists">
+		</ul>
+		<button id="button">换一组</button>	
+	</body>
+	<script>
+		var btn=$("#button");
+		var ulLists=$(".lists");
+		btn.addEventListener("click",function(){
+			var script=document.createElement("script");
+			script.src='http://a.jrg.com:8080/readnew?callback=addLi';
+			document.head.appendChild(script);
+			document.head.removeChild(script);
+		})
+		function addLi(newsDate){
+			var htmls="";
+			for (var i=0;i<newsDate.length;i++) {
+			    var li="<li>"+newsDate[i]+"</li>"
+				htmls+=li
+			}
+			ulLists.innerHTML=htmls;
+		}
+		function $(str){
+			return document.querySelector(str)
+		}
+	</script>
+</html>

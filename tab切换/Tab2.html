@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	 <style>
+	  	ul,li{
+	  		padding: 0;
+	  		margin: 0;
+	  	}
+	  	li{
+	  		list-style: none;
+	  	}
+	  	.clearfix:after{
+	  		content: " ";
+	  		display: block;
+	  		clear: both;
+	  	}
+	  	.table{
+	  		padding: 10px 10px;
+	  		margin: 20px auto;
+	  		width: 500px;
+	  		border: 1px solid #ccc;
+	  		border-radius: 4px;
+	  	}
+	  	.table .table-head{
+	  		width: 499px;
+	  		border-right: 1px solid #ccc;
+	  	}
+	  	.table .table-head>li{
+	  		padding-top: 5px;
+	  		float: left;
+	  		cursor: pointer;
+	  		width: 33.12%;
+	  		text-align: center;
+	  		border: 1px solid #CCC;
+	  		border-right: none;
+	  	}
+	  	.table .table-head .active{
+	  		background-color:#EDEDED ;
+	  	}
+	  	.table .table-box li{
+	  		display: none;
+	  		padding: 30px 20px;
+	  		height: 200px;
+	  		border-left: 1px solid #ccc;
+	  		border-right: 1px solid #ccc;
+	  		border-bottom: 1px solid #ccc;
+	  	}
+	  	.table .table-box .active{
+	  		display: block;
+	  	}
+	  </style>
+    </head>
+	<body>
+		<div class="table">
+			<ul class="table-head clearfix">
+				<li class="active">tab1</li>
+				<li>tab2</li>
+				<li>tab3</li>
+			</ul>
+			<ul class="table-box">
+				<li class="active">111111111</li>
+				<li>222222222</li>
+				<li>333333333</li>
+			</ul>
+		</div>
+		<script>
+			var tableHead=$(".table-head");
+			var tableBox=$(".table-box");
+		    //冒泡，事件代理监听
+			tableHead.addEventListener("click",function(e){
+				var nodeclick=e.target;
+				var headLis=tableHead.children;
+				var boxLis=tableBox.children;
+				//判断点击的对象是不是li，因为事件监听是绑定到ul上的
+				if(nodeclick.tagName.toLowerCase()==="li"){
+					//清除掉所有按钮active样式
+				Array.prototype.forEach.call(headLis,function(e){
+					e.classList.remove("active");
+				})
+				//为单击的目标按钮添加active样式
+				nodeclick.classList.add("active");
+				
+				//查询获取有active样式的按钮在数组中的下标值，保存到index中
+				var index=[].indexOf.call(headLis,$(".active"));
+				//循环遍历先删除每个box的添加样式active
+				Array.prototype.forEach.call(boxLis,function(e){
+					e.classList.remove("active");
+				}) 
+				//为对应下标的box添加active样式类，使对应box显示出来
+				boxLis[index].classList.add("active");
+				}
+			})
+			function $(str){
+			 	return document.querySelector(str);
+			 };
+		</script>
+	</body>
+</html>

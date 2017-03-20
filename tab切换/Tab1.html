@@ -1,0 +1,111 @@
+		<!DOCTYPE html>
+		<html>
+		<head>
+		  <meta charset="utf-8">
+		  <title>JS Bin</title>
+		  <style>
+		  	ul,li{
+		  		padding: 0;
+		  		margin: 0;
+		  	}
+		  	li{
+		  		list-style: none;
+		  	}
+		  	.clearfix:after{
+		  		content: " ";
+		  		display: block;
+		  		clear: both;
+		  	}
+		  	.table{
+		  		padding: 20px 20px;
+		  		margin: 20px auto;
+		  		width:600px;
+		  		border: 1px solid #ccc;
+		  		border-radius: 4px;
+		  	}
+		  	.table .table-head{
+		  		border-bottom: 1px solid #ccc;
+		  	}
+		  	.table .table-head>li{
+		  		float: left;
+		  		padding: 10px 20px;
+		  		cursor: pointer;
+		  		border-top: 1px solid #FFFFFF;
+		  		border-left: 1px solid #FFFFFF;
+		  		border-right: 1px solid #FFFFFF;
+		  		color: brown;
+		  	}
+		  	.table .table-head .active{
+		  		margin-bottom: -1px;
+		  		border: 1px solid #ccc;
+		  		border-bottom-color: #FFFFFF;
+		  		border-radius: 4px 4px 0 0;
+		  		color: #333;
+		  	}
+		  	.table .table-box li{
+		  		display: none;
+		  		padding: 30px 20px;
+		  		height: 200px;
+		  	}
+		  	.table .table-box .active{
+		  		display: block;
+		  	}
+		  </style>
+		</head>
+				<body>
+					<div class="table">
+						<ul class="table-head clearfix">
+							<li class="active">选项一</li>
+							<li>选项二</li>
+							<li>选项三</li>
+						</ul>
+						<ul class="table-box">
+							<li class="active">111111111</li>
+							<li>222222222</li>
+							<li>333333333</li>
+						</ul>
+					</div>
+					<script>
+						  var tableHead=$(".table-head");
+						  var tableBox=$(".table-box");
+						  var liHead=tableHead.getElementsByTagName("li");
+						  var liBox=tableBox.getElementsByTagName("li");
+						  var index;
+						  for (var i=0;i<liHead.length;i++) {
+						  	 addEvent(liHead[i],"click",function(e){
+						  	 	//循环遍历删除按钮li的样式
+						  	 	Array.prototype.forEach.call(liHead,function(e){
+						  	 		e.classList.remove("active");
+						  	 	})
+						  	 	//为当前点击的按钮添加样式
+						  	 	  e.target.classList.add("active");
+						  	 	  //循环遍历删除显示框
+						  	 	  Array.prototype.forEach.call(liBox,function(e){
+						  	 		   e.classList.remove("active");
+						  	 	  })
+						  	 	  //循环遍历，保存被点击按钮的序号，显示出对应序号的显示框
+						  	 	  for (var j=0;j<liHead.length;j++) {
+						  	 	  	if(liHead[j]===$(".active")){
+						  	 	  		liBox[j].classList.add("active");
+						  	 	  	}
+						  	 	  }
+						  	 });
+						  }
+						 function $(str){
+						 	return document.querySelector(str);
+						 }
+				     function   addEvent(node,type,handler){
+				         if(!node) return false;
+				         if(node.addEventListener){
+				            node.addEventListener(type,handler,false);
+				            return true;
+				       }
+				        if(node.attachEvent){
+				              node.attachEvent('on'+type,handler);
+				              return true;          
+				       }
+				             return false;
+				    }
+					</script>
+				</body>
+		</html>

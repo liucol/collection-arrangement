@@ -89,4 +89,5 @@ a{
 	transform: translate(-50%,-50%);
     border: 1px solid firebrick;
     color: firebrick;
+    background: white;
 }

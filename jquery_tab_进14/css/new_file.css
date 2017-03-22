@@ -1,0 +1,92 @@
+ul,li{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.clearfix:after{
+	content: " ";
+	display: block;
+	clear: both;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+.box{
+	margin-top: 50px;
+}
+.title-ul{
+	width: 215px;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-radius: 4px 4px 0 0;
+}
+.title-ul>li{
+	float: left;
+	padding: 10px 0;
+}
+.title-ul>li a{
+	padding: 0 10px;
+}
+.title-ul>li span{
+	color: #ccc;
+}
+.title-ul .active{
+	background: #ccc;
+}
+.title-ul .active>a{
+	color: #C81623;
+}
+
+.ct-ul>li{
+	display: none;
+	width: 646px;
+	border: 2px solid #ccc;
+	overflow: hidden;
+}
+.ct-ul .active{
+	display: block;
+}
+
+.ct-ul>li>ul{
+	margin-left: -20px ;
+	margin-bottom: -20px;
+}
+.ct-ul>li>ul>li{
+	position: relative;
+	float: left;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	width: 200px;
+	border: 1px solid #ccc;
+}
+.ct-ul>li>ul>li p{
+	margin-left: 20px;
+	margin-right: 10px;
+}
+.ct-ul .price{
+	color: red;
+}
+.ct-ul>li>ul .cover{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.3);
+	display: none;
+}
+.ct-ul>li>ul>li:hover .cover{
+	display: block;
+}
+.ct-ul>li>ul .cover a{
+	display: block;
+    padding: 10px;	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+    border: 1px solid firebrick;
+    color: firebrick;
+}

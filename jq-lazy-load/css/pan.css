@@ -1,0 +1,30 @@
+ul,li{
+    padding: 0;
+    margin: 0;
+}
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.box{
+    margin: 0 auto;
+    width: 940px;
+}
+.box>.lists{
+    margin-right: -20px;
+}
+li{
+    margin-right: 20px ;
+    margin-bottom: 20px;
+    float: left;
+    list-style: none;
+}
+li:after {
+    content: '';
+    display: block;
+    width: 300px;
+}
+li img{
+    height: 300px;
+}

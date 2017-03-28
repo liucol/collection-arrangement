@@ -9,7 +9,7 @@ ul,li{
 }
 .box{
     margin: 0 auto;
-    width: 940px;
+    width: 980px;
 }
 .box>.lists{
     margin-right: -20px;
@@ -23,8 +23,9 @@ li{
 li:after {
     content: '';
     display: block;
-    width: 300px;
+    width: 480px;
 }
 li img{
-    height: 300px;
+    width: 480px;
+    height: 360px;
 }

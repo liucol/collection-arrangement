@@ -5,13 +5,16 @@ var start=0
 var send=true
 $(".wrap>.btn").on("click",function(){
     if(send){
+        send=false
         $.ajax({
             url:"/news",
             type:"get",
-            data:start,
+            data:{
+                dt:start,
+                _:Math.random()
+            },
             dataType:"json",
         }).done(function(ret) {
-            send=false
             if(ret.status===0){
                 appendHtml(ret.data)
                 start++

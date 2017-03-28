@@ -42,8 +42,9 @@ var newsList=[
 
 
 app.get("/news",function(req,res){
-    var start=req.query.data.start
-    var len=3
+    //前台传过来的数据
+    var start=req.query.dt
+    var len=2
     var datas=newsList.slice(start*len,start*len+len)
     res.send({
         status:0,

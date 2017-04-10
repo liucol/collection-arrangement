@@ -3,35 +3,42 @@
  */
 var imgHeight=200;
 var wrapWidth=$('.wrap').width();
+
 onerow()
 var $img_contain=$('.img-contain').last()
-
 load()
+
 $(window).on('scroll',load)
+
 //实现懒加载
 function load(){
-    console.log(isshow($img_contain))
+    showonerow()
+    if(isshow($img_contain)){
+        showonerow()
+    }
+}
+function showonerow(){
     if(isshow($img_contain)){
         onerow()
         $img_contain=$('.img-contain').last()
     }
-    function isshow($img_contain){
-        var offsetTop=$img_contain.offset().top
-        var windowHeight=$(window).height()
-        var scorllTop=$(window).scrollTop()
-        var imgOuterHeight=$img_contain.outerHeight()
-        if (offsetTop<windowHeight+scorllTop&&scorllTop<offsetTop+imgOuterHeight){
-            return true
-        }else{
-            return false
-        }
+}
+function isshow($img_contain){
+    var offsetTop=$img_contain.offset().top
+    var windowHeight=$(window).height()
+    var scorllTop=$(window).scrollTop()
+    var imgOuterHeight=$img_contain.outerHeight()
+    if (offsetTop<windowHeight+scorllTop&&scorllTop<offsetTop+imgOuterHeight){
+        return true
+    }else{
+        return false
     }
 }
-
 
 function onerow(){
     var imgList=[]
     var sumWidth=0
+
     for(var i=0;i<10;i++){
         //随机生成图片宽度
         var width=creatWidth()
@@ -52,13 +59,14 @@ function onerow(){
             break
         }
     }
+
 }
 
 function creatWidth(){
     var randomWidth=parseInt((Math.random()*5+2)*100)
     return randomWidth
 }
-//扩大高度
+
 function enlarge(imgList,sumWidth){
      var x=imgHeight*wrapWidth/sumWidth-imgHeight
     for(var i=0;i<imgList.length;i++){

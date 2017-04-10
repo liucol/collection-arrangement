@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrap{
+    width: 1154px;
+}
+.img-contain{
+    margin-bottom: 5px;
+}

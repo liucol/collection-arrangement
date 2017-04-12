@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.wrap{
+    position: relative;
+    width: 900px;
+    margin: 0 auto;
+}
+.wrap .containWrap{
+}
+.wrap .containWrap .contain{
+    position: absolute;
+    padding: 10px;
+    margin: 10px;
+    width: 280px;
+    opacity: 0;
+    border: 1px solid #ccc;
+}
+.wrap .containWrap .contain>.img{
+    margin-bottom: 15px;
+}
+.wrap .containWrap .contain>.img img{
+    display: block;
+    width: 258px;
+}
+.wrap .containWrap .contain>h3{
+    padding-bottom: 5px;
+    border-bottom:  1px solid #ccc;
+}
+.wrap .containWrap .contain>p{
+    padding: 0 5px;
+    font-size: 0.8em;
+    color: #777371;
+    line-height: 1.8;
+}
+.wrap .hidden{
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+}

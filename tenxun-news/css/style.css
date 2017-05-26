@@ -3,6 +3,10 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: Helvetica,STHeiti,Droid Sans Fallback;
+}
+body{
+    background: #FAFAFA;
 }
 ul li{
     list-style: none;
@@ -10,6 +14,11 @@ ul li{
 a{
     text-decoration: none;
     color: #333;
+}
+.clearfix:after{
+    content: ' ';
+    display: block;
+    clear: both;
 }
 /**/
 header .head{
@@ -98,4 +107,150 @@ header .carousel .bullet li{
 }
 header .carousel .bullet .active{
     border-color: #4998E7;
+}
+/*新闻内容部分*/
+.wrap{}
+/*轮播下的列表*/
+.wrap .list{
+    padding: 1.3rem 1.6rem;
+}
+.wrap .list ul{}
+.wrap .list ul li{
+    font-size: 2.4rem;
+    line-height: 4.7rem;
+    border-bottom: .3px solid #cccccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.wrap .list ul li:last-of-type{
+    border-bottom: none;
+}
+.wrap .list ul li strong{
+    font-style: normal;
+    font-weight: 400;
+}
+.wrap .list ul li strong:after{
+    content: '|';
+    margin-left: 1.2rem;
+    font-size: 2.1rem;
+    color: #d5d5d5;
+}
+.wrap .list ul li span{}
+.wrap .list ul li span img{
+    width: 7.5rem;
+    margin-bottom: 1rem;
+    margin-left: -9px;
+}
+.wrap .list ul li strong a{
+    color: #458fce;
+}
+.wrap .list ul li span a{
+    color: #111;
+}
+/*tab*/
+.tab{
+    overflow: hidden;
+}
+/*tab的头部*/
+.tab .head{
+    background-image: url("../img/headbg.png");
+    background-repeat: no-repeat;
+    background-position: left -62px;
+    font-size: 1.8rem;
+    border-top: .4rem solid #9ac7ed;
+}
+.tab .head ul{}
+.tab .head ul li{
+    width: 9rem;
+    line-height: 5rem;
+    float: left;
+}
+.tab .head ul li h2{
+    font-weight: 400;
+    text-align: center;
+}
+.tab .head ul .active{
+    color: #c14545;
+    border-top: .4rem solid #2a70be;
+    margin-top: -.2em;
+    background-image: url("../img/tab_ui.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 9rem 5rem;
+}
+/*tab的内容*/
+.tab .container{
+    transform: translate3d(0px,0,0);
+    transition: transform 100ms;
+}
+.tab .container .newList{
+    position: relative;
+    float: left;
+    padding: 0 1.7rem;
+}
+.tab .container .newList ul{}
+.tab .container .newList ul li{
+    border-bottom: .1rem solid #eceef0;
+    overflow: hidden;
+}
+.tab .container .newList ul li:last-of-type{
+    border-bottom: none;
+}
+.tab .container .newList ul li a{
+    line-height: 5rem;
+    display: block;
+    color: #000;
+}
+.tab .container .newList ul li a .them{
+    float: left;
+    padding: 1.3rem 0;
+    margin-right: 1rem;
+}
+.tab .container .newList ul li a .them img{
+    width: 11rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.tab .container .newList ul li a span{
+    display: inline-block;
+    margin-top: 1.4rem;
+    margin-right: .8rem;
+    float: left;
+    width: 4rem;
+    height: 2.3rem;
+    background-image: url("../img/flagicon.png");
+    background-repeat: no-repeat;
+    background-size: 28rem 2.2rem;
+}
+/*专题图标*/
+.tab .container .newList ul li a .topic{
+    background-position: -12rem 0;
+}
+.tab .container .newList ul li a h2{
+    font-size: 2.6rem;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tab .container .newList ul li a p{
+    float: right;
+    line-height: 1rem;
+}
+.tab .container .newList ul li a p i{
+    display: inline-block;
+    font-size: 2.5rem;
+    font-style: normal;
+    line-height: 3rem;
+    vertical-align: middle;
+    color: #878c92;
+}
+.tab .container .newList ul li a p .message{
+    width: 2.2rem;
+    height: 2.8rem;
+    background-image: url("../img/icon_v2.png");
+    background-repeat: no-repeat;
+    background-position: -14rem .9rem;
+    background-size: 20rem 4rem;
 }

@@ -28,7 +28,6 @@ function play(idx){
     $items.eq(idx).fadeIn(2000, function(){
         isAnimate = false;
     });
-
     curIdx = idx;
     setBullet();
 }

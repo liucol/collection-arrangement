@@ -1,0 +1,101 @@
+/*样式重置*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+/**/
+header .head{
+    background: url("../img/headerbg_v2.png") top no-repeat;
+    background-size: contain;
+    background-position: 23rem center;
+    background-color: #FAFAFA;
+}
+header .head .logo {
+    display: inline-block;
+    margin: 1.3rem;
+}
+header .head .logo img{
+    height: 4.5rem;
+}
+header .head span{
+    display: inline-block;
+    margin: 1.3rem;
+    padding: .4rem;
+    float: right;
+    border-radius: 8px;
+    font-size: 3rem;
+    background: #4998E7;
+    color: #FFFFFF;
+}
+/*nav部分*/
+header nav{
+    padding-bottom: 1rem;
+    background: #4998E7;
+    border-top: 5px solid #317ECB;
+}
+header nav ul{}
+header nav ul li{
+    display: inline-block;
+    margin: 1rem 2.9rem;
+}
+header nav ul li a{
+    font-size: 3rem;
+    color: #FFF;
+}
+/*轮播*/
+header .carousel{
+    position: relative;
+    height: 508px;
+}
+header .carousel .img-ct{
+    height: 508px;
+}
+header .carousel .img-ct li{
+    position: absolute;
+    width: 100%;
+    height: 508px;
+}
+header .carousel .img-ct li a{
+    display: block;
+}
+header .carousel .img-ct li a img{
+    width: 980px;
+    height: 508px;
+}
+header .carousel .img-ct li div{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: .3rem 0 2rem 4rem;
+    font-size: 1.5rem;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #000;
+    background: -moz-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.9));
+    background: -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.9));
+    background: -o-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.9));
+}
+header .carousel .img-ct li a div h2{
+}
+header .carousel .bullet{
+    position: absolute;
+    bottom: 30px;
+    right: 3%;
+}
+header .carousel .bullet li{
+    display: inline-block;
+    margin-right: 1.3rem;
+    width: 0;
+    border: .55rem solid #AAAAAA;
+}
+header .carousel .bullet .active{
+    border-color: #4998E7;
+}

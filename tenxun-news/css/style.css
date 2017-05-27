@@ -381,7 +381,7 @@ header .carousel .bullet .active{
 /*页面上固定的图片*/
 .fixImg{
     position: fixed;
-    top: 75rem;
+    top: 70rem;
     right: 2rem;
     z-index: 1;
 }

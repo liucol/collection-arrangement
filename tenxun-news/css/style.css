@@ -148,6 +148,33 @@ header .carousel .bullet .active{
 .wrap .list ul li span a{
     color: #111;
 }
+.wrap .list .QQLoginInto{
+    font-size: 2.7rem;
+    border: 2px solid #e0f0ff;
+    border-radius: 3px;
+    background-color: #EDF6FF;
+}
+.wrap .list .QQLoginInto a{
+    display: inline-block;
+    line-height: 6rem;
+    height: 6rem;
+    width: 100%;
+    text-align: center;
+    color: #4998e7;
+}
+.wrap .list .QQLoginInto a .goInto:after{
+    content: '';
+    display: inline-block;
+    margin-left: 10px;
+    width: 48px;
+    height: 53px;
+    background-image: url("../img/icon_v2.png");
+    background-repeat: no-repeat;
+    background-position: -137px 0px;
+    background-size: 262px 46px;
+    vertical-align: middle;
+}
+
 /*tab*/
 .tab{
     overflow: hidden;
@@ -187,7 +214,7 @@ header .carousel .bullet .active{
 .tab .container .newList{
     position: relative;
     float: left;
-    padding: 0 1.7rem;
+    padding: 2rem 1.7rem;
 }
 .tab .container .newList ul{}
 .tab .container .newList ul li{
@@ -204,7 +231,7 @@ header .carousel .bullet .active{
 }
 .tab .container .newList ul li a .them{
     float: left;
-    padding: 1.3rem 0;
+    padding: 1rem 0;
     margin-right: 1rem;
 }
 .tab .container .newList ul li a .them img{
@@ -253,4 +280,110 @@ header .carousel .bullet .active{
     background-repeat: no-repeat;
     background-position: -14rem .9rem;
     background-size: 20rem 4rem;
+}
+.tab .container .newList .comeInto{
+    font-size: 2.7rem;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #f6f5f5;
+}
+.tab .container .newList .comeInto a{
+    display: inline-block;
+    line-height: 6rem;
+    height: 6rem;
+    width: 100%;
+    text-align: center;
+    color: #b4b4b4;
+}
+.tab .container .newList .comeInto a .goChannel:after{
+    content: '';
+    display: inline-block;
+    margin-left: 10px;
+    width: 48px;
+    height: 53px;
+    background-image: url("../img/icon_v2.png");
+    background-repeat: no-repeat;
+    background-position: -137px 0px;
+    background-size: 262px 46px;
+    vertical-align: middle;
+}
+/*加载新闻列表部分*/
+.addNewsList{
+    padding: 1rem 1.7rem;
+    margin-top: 1rem;
+    border-top: 4px solid #317ECB;
+}
+.addNewsList .hotNews{}
+.addNewsList .hotNews h2{
+    line-height: 4.5rem;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #317ECB;
+}
+.addNewsList ul{
+    margin: 2rem 0;
+}
+.addNewsList ul li{
+    line-height: 4rem;
+    margin-bottom: 1.6rem;
+}
+.addNewsList ul li .img{
+    float: left;
+    margin-right: 2rem;
+    background: #F6F5F5;
+    border: 1px solid #DADADA;
+    width: 12.5rem;
+    height: 9.7rem;
+    text-align: center;
+}
+.addNewsList ul li .img img{
+    width: 11rem;
+    margin-top: .5rem;
+}
+.addNewsList ul li h2{
+    font-size: 2.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.addNewsList ul li p{
+    font-size: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.addNewsList .addMoreNews{
+    font-size: 2.7rem;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #f6f5f5;
+}
+.addNewsList .addMoreNews a{
+    display: inline-block;
+    line-height: 6rem;
+    height: 6rem;
+    width: 100%;
+    text-align: center;
+    color: #A9A9A9;
+}
+.addNewsList .addMoreNews a:after{
+    content: '';
+    display: inline-block;
+    margin-left: 10px;
+    width: 48px;
+    height: 53px;
+    background-image: url("../img/icon_v2.png");
+    background-repeat: no-repeat;
+    background-position: -92px 0px;
+    background-size: 262px 46px;
+    vertical-align: middle;
+}
+/*页面上固定的图片*/
+.fixImg{
+    position: fixed;
+    top: 75rem;
+    right: 0;
+}
+.fixImg img{
+    width: 8rem;
 }

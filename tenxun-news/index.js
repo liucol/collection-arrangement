@@ -45,6 +45,10 @@ var server = http.createServer(function(request, response){
         var string = fs.readFileSync('./js/loadNewsDates.js')
         response.setHeader('Content-Type', 'application/javascript')
         response.end(string)
+    }else if(path === '/js/pan.js'){  // 如果用户请求的是 /main.js 路径
+        var string = fs.readFileSync('./js/pan.js')
+        response.setHeader('Content-Type', 'application/javascript')
+        response.end(string)
     }else if(path === '/img/0.jpg'){  // 如果用户请求的是 /print-style.css 路径
         var string = fs.readFileSync('./img/0.jpg')
         response.end(string)
@@ -59,6 +63,36 @@ var server = http.createServer(function(request, response){
         response.end(string)
     }else if(path === '/img/4.jpg'){  // 如果用户请求的是 /print-style.css 路径
         var string = fs.readFileSync('./img/4.jpg')
+        response.end(string)
+    }else if(path === '/img/6.jpg'){  // 如果用户请求的是 /print-style.css 路径
+        var string = fs.readFileSync('./img/6.jpg')
+        response.end(string)
+    }else if(path === '/img/7.jpg'){  // 如果用户请求的是 /print-style.css 路径
+        var string = fs.readFileSync('./img/7.jpg')
+        response.end(string)
+    }else if(path === '/img/game_1.png'){  // 如果用户请求的是 /print-style.css 路径
+        var string = fs.readFileSync('./img/game_1.png')
+        response.end(string)
+    }else if(path === '/img/game_2.png'){  // 如果用户请求的是 /print-style.css 路径
+        var string = fs.readFileSync('./img/game_1.png')
+        response.end(string)
+    }else if(path === '/img/game_3.jpg'){  // 如果用户请求的是 /print-style.css 路径
+        var string = fs.readFileSync('./img/game_3.jpg')
+        response.end(string)
+    }else if(path === '/img/game_4.png'){  // 如果用户请求的是 /print-style.css 路径
+        var string = fs.readFileSync('./img/game_4.png')
+        response.end(string)
+    }else if(path === '/img/game_5.jpg'){  // 如果用户请求的是 /print-style.css 路径
+        var string = fs.readFileSync('./img/game_5.jpg')
+        response.end(string)
+    }else if(path === '/img/game_6.png'){  // 如果用户请求的是 /print-style.css 路径
+        var string = fs.readFileSync('./img/game_6.png')
+        response.end(string)
+    }else if(path === '/img/game_7.png'){  // 如果用户请求的是 /print-style.css 路径
+        var string = fs.readFileSync('./img/game_7.png')
+        response.end(string)
+    }else if(path === '/img/game_8.png'){  // 如果用户请求的是 /print-style.css 路径
+        var string = fs.readFileSync('./img/game_8.png')
         response.end(string)
     }else if(path === '/img/17783136.png'){  // 如果用户请求的是 /print-style.css 路径
         var string = fs.readFileSync('./img/17783136.png')

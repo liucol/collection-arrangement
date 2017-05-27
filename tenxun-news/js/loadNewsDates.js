@@ -20,7 +20,7 @@ function ajax(){
         jsonp:'jsoncallback',
         data: {
             app_key: 1271687855,
-            num: 1,
+            num: 3,
             page: pagenum
         }
     }).done(function (ret){
@@ -31,9 +31,24 @@ function ajax(){
 }
 function sucess(ret){
     if(ret&&ret.status&&ret.status.code==='0'){
-        console.log(ret.data)
-       /* appendHtml(ret.data)*/
+        /*测试数据获取情况*/
+        /*console.log(ret.data)*/
+        appendHtml(ret.data)
     }else{
         console.log('get data error')
     }
+}
+function appendHtml(newsdata){
+     var $addNewsListUL=$(".addNewsList ul")
+     var $fragement=$(document.createDocumentFragment())
+     for(var i=0;i<newsdata.length;i++){
+         var $html=''
+         $html+='<li class="clearfix">'
+         $html+='<div class="img"><img src='+newsdata[i].img_url+' alt=""></div>'
+         $html+=' <h2>'+newsdata[i].short_name+'</h2>'
+         $html+='<p>'+newsdata[i].name+'</p>'
+         $html+='</li>'
+         $fragement.append($html)
+     }
+    $addNewsListUL.append($fragement)
 }

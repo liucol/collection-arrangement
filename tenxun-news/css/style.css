@@ -382,8 +382,122 @@ header .carousel .bullet .active{
 .fixImg{
     position: fixed;
     top: 75rem;
-    right: 0;
+    right: 2rem;
+    z-index: 1;
 }
 .fixImg img{
     width: 8rem;
+}
+/*应用推荐*/
+.game{
+    margin: 2rem 0;
+    border-top: .4rem solid #317ECB;
+}
+.game .title{
+    padding: 0 1.7rem;
+    line-height: 6rem;
+    border-bottom: 2px solid #E8E8E8;
+}
+.game .title h2{
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 400;
+    vertical-align: middle;
+    color: #317ECB;
+}
+.game .title span{
+    display: inline-block;
+    float: right;
+    font-size: 2.6rem;
+    vertical-align: middle;
+}
+.game ul{
+}
+.game ul li{
+    padding: 2.3rem 2.3rem 0 2.3rem;
+    display: inline-block;
+}
+.game ul li a{
+    display: inline-block;
+}
+.game ul li a .img{}
+.game ul li a .img img{
+    width: 10.5rem;
+}
+.game ul li a p{
+    font-size: 2rem;
+    line-height: 5rem;
+    text-align: center;
+}
+.game ul li a span{
+    display: inline-block;
+    width: 10rem;
+    font-size: 2.8rem;
+    color: #3887e1;
+    line-height: 5.3rem;
+    border: 1px solid #3887e1;
+    border-radius: 2rem;
+    text-align: center;
+    vertical-align: middle;
+}
+/*底部*/
+footer{
+    position: relative;
+    background-color: #404A54;
+}
+footer .footerList{}
+footer .footerList ul{
+    padding: 1.7rem;
+    margin: 3rem 0 0 0;
+    background-color: #49535D;
+}
+footer .footerList ul li{
+    padding: 0 3rem;
+    display: inline-block;
+    font-size: 2.6rem;
+}
+footer .footerList ul li a{
+    line-height: 6rem;
+    color: #95a0ac;
+}
+footer .lastMessage{
+    padding-top: 1.7rem;
+}
+footer .lastMessage p{
+    font-size: 2.3rem;
+    padding: 1.6rem 0 0 2rem;
+    color: #95a0ac;
+}
+footer .lastMessage p a{
+    color: #95a0ac;
+}
+footer .lastMessage p span{
+    padding: 0 2rem;
+    font-weight: 400;
+}
+footer .lastMessage span{
+    display: inline-block;
+    padding: 1.6rem 0 1.6rem 2rem;
+    font-size: 2rem;
+    color: #95a0ac;;
+}
+footer .lastMessage .gobackTop{
+    position: absolute;
+    bottom: 7rem;
+    right: 2rem;
+    width: 7rem;
+    height: 7rem;
+    background-color: #313A43;
+}
+footer .lastMessage .gobackTop:after{
+    content: '';
+    display: inline-block;
+    margin-top: 1.7rem;
+    margin-left: 1.3rem;
+    width: 4.6rem;
+    height: 4rem;
+    background-image: url("../img/icon_v2.png");
+    background-repeat: no-repeat;
+    background-size: 22rem 5rem;
+    background-position: -17.5rem 0;
 }

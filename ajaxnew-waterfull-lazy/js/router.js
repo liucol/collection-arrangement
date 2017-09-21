@@ -21,7 +21,7 @@ function ajax(){
         jsonp:'jsoncallback',
         data: {
             app_key: 1271687855,
-            num: 1,
+            num: 2,
             page: pagenum
         }
     }).done(function (ret){

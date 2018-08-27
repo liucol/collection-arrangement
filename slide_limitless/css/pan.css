@@ -1,61 +1,73 @@
-ul,li{
+ul,
+li {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-.clearfix:after{
+
+.clearfix:after {
     content: '';
     display: block;
     clear: both;
 }
-.carousel{
+
+.carousel {
     position: relative;
     width: 700px;
     height: 500px;
     overflow: hidden;
 }
-.carousel>.ct-image{
+
+.carousel>.ct-image {
     position: absolute;
     height: 500px;
 }
-.carousel>.ct-image>li{
+
+.carousel>.ct-image>li {
     float: left;
 }
-.carousel>.ct-image img{
+
+.carousel>.ct-image img {
+    height: 500px;
+    width: 800px;
 }
 
-.carousel>.btn{
+.carousel>.btn {
     position: absolute;
     display: block;
     top: 252px;
-    transform: translate(0,-50%);
+    transform: translate(0, -50%);
     width: 40px;
     height: 40px;
     text-align: center;
     line-height: 40px;
-    background: #333 ;
+    background: #333;
     opacity: 0.8;
     color: #fff;
     text-decoration: none;
     border-radius: 50%;
 }
-.carousel>.btn:hover{
+
+.carousel>.btn:hover {
     box-shadow: 0 0 20px 5px #fff;
 }
-.carousel>.btn-pre{
+
+.carousel>.btn-pre {
     left: 20px;
 }
-.carousel>.btn-nex{
+
+.carousel>.btn-nex {
     right: 20px;
 }
 
-.carousel>.bullet{
-	position: absolute;
+.carousel>.bullet {
+    position: absolute;
     bottom: 20px;
     left: 350px;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
 }
-.carousel>.bullet>li{
+
+.carousel>.bullet>li {
     float: left;
     margin: 0 5px;
     width: 20px;
@@ -64,11 +76,12 @@ ul,li{
     border-radius: 5px;
     background: #fff;
 }
-.carousel>.bullet>li:hover{
+
+.carousel>.bullet>li:hover {
     background: red;
 }
-.carousel>.bullet .active{
+
+.carousel>.bullet .active {
     background: #333;
     opacity: 0.8;
 }
-
